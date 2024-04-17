@@ -1,0 +1,6 @@
+section_merge_strategy: enclose
+asciidoc:
+  extensions:
+    - asciidoctor-kroki
+  attributes:
+    toc: auto

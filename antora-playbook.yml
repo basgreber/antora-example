@@ -1,0 +1,14 @@
+site:
+  title: Orchestrator Documentation
+  start_page: orchestrator-overview:module-one:overview.adoc
+content:
+  sources:
+    - url: .
+      start_path: general
+antora:
+  extensions:
+    - '@antora/pdf-extension'
+ui:
+  bundle:
+    url: https://gitlab.com/antora/antora-ui-default/-/jobs/artifacts/HEAD/raw/build/ui-bundle.zip?job=bundle-stable
+    snapshot: true
