@@ -8,5 +8,5 @@ RUN yarn global add --ignore-optional --silent @antora/lunr-extension @antora/pd
   && bundle config --local path gems \
   && echo -e "source 'https://rubygems.org'\ngem 'asciidoctor-pdf', '~> 2.3.0'\ngem 'hexapdf'\ngem 'text-hyphen'\ngem 'asciidoctor-kroki'" > $BUNDLE_APP_CONFIG/Gemfile \
   && bundle install \
-  && bundle binstubs asciidoctor-pdf asciidoctor-kroki --path /usr/local/bin \
+  && bundle binstubs asciidoctor-pdf --path /usr/local/bin \
   && rm -rf $BUNDLE_APP_CONFIG/gems/ruby/*/cache/* \
