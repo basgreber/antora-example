@@ -6,15 +6,7 @@ RUN yarn global add --ignore-optional --silent @antora/lunr-extension @antora/pd
   && rm -rf $(yarn cache dir)/* \
   && apk --no-cache add build-base openssl-dev ruby-bundler ruby-dev \
   && bundle config --local path gems \
-  && echo -e "source 'https://rubygems.org'\ngem 'asciidoctor-pdf', '~> 2.3.0'\ngem 'hexapdf'\ngem 'text-hyphen'" > $BUNDLE_APP_CONFIG/Gemfile \
+  && echo -e "source 'https://rubygems.org'\ngem 'asciidoctor-pdf', '~> 2.3.0'\ngem 'hexapdf'\ngem 'text-hyphen'\ngem 'asciidoctor-kroki'" > $BUNDLE_APP_CONFIG/Gemfile \
   && bundle install \
-  && bundle binstubs asciidoctor-pdf --path /usr/local/bin \
+  && bundle binstubs asciidoctor-pdf asciidoctor-kroki --path /usr/local/bin \
   && rm -rf $BUNDLE_APP_CONFIG/gems/ruby/*/cache/* \
-  && apk --no-cache add font-noto-cjk font-noto-devanagari font-noto-gujarati font-noto-myanmar git-lfs2 icu-data-full libreoffice-writer msttcorefonts-installer openjdk17-jre-headless unzip wget \
-  && update-ms-fonts \
-  && wget -O /tmp/fonts.zip https://www.rmtweb.co.uk/s/Calibri-and-Cambria-Fonts.zip \
-  && unzip -d /tmp/fonts /tmp/fonts.zip \
-  && mkdir /usr/share/fonts/truetype/msttmorefonts \
-  && cp /tmp/fonts/C*/*.ttf /usr/share/fonts/truetype/msttmorefonts/ \
-  && fc-cache -f \
-  && rm -rf /tmp/fonts*
