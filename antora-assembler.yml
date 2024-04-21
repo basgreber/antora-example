@@ -1,6 +1,12 @@
 section_merge_strategy: enclose
+
+
+build:
+  command: bundle exec asciidoctor-pdf -r asciidoctor-kroki
+
 asciidoc:
-  extensions:
-    - asciidoctor-kroki
   attributes:
+    allow-uri-read: ''
+    kroki-fetch-diagram: ~
+    source-highlighter: rouge
     toc: auto

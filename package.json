@@ -5,7 +5,6 @@
   },
   "dependencies": {
     "@antora/pdf-extension": "^1.0.0-alpha.8",
-    "asciidoctor-kroki": "^0.18.1",
-    "asciidoctor-pdf": "^1.0.0-alpha.16"
+    "asciidoctor-kroki": "^0.18.1"
   }
 }
